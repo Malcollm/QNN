@@ -96,7 +96,7 @@ class Network:
         result = self.backend.run(self.qcD, shots=1024).result()
         self.counts = result.get_counts(self.qcD)
 
-        # calculates the probability o f each qubit being in the 1 state
+        # calculates the probability of each qubit being in the 1 state
         for bitstring, freq in self.counts.items():
             bits = bitstring[::-1]
             for q in range(self.q_bits):

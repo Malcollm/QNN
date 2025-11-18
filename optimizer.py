@@ -59,8 +59,10 @@ class Optimizer:
         for data_point in range(len(self.data[0])):
             self.net.pass_state(self.data[0][data_point])
             error += self.net.get_error(self.data[1][data_point])
-        print(0)
-        print(error)
+        print("Optimization starting...")
+        print(f"Step 0/{reps}")
+        print(f"Error: {error}")
         for rep in range(reps):
-            print(rep+1)
+            print(f"Step {rep+1}/{reps}")
             self.optimize_step(step)
+        print("Optimization complete")
